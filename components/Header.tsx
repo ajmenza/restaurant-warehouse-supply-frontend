@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { RiShoppingCartLine } from "react-icons/ri";
+import { FlexColumn, Flex } from "../globalStyles";
 
-const Wrapper = styled.header`
-  display: flex;
+const HeaderDiv = styled(FlexColumn)`
   background-color: #00bbff;
   height: 120px;
   padding: 10px;
@@ -10,22 +11,44 @@ const Wrapper = styled.header`
 
 const CompanyName = styled.h1`
   margin: 0;
-  font-family: 'Work Sans';
-  font-weight: 600;
+  font-family: "Work Sans";
+  font-weight: 500;
   letter-spacing: -2px;
   word-spacing: -5px;
-  background-color: pink;
+  background-color: #eeeeee;
   height: min-content;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 5px 15px;
-  box-shadow: 1px 1px 5px #00000069;
+  box-shadow: 1px 1px 5px #0000004b;
 `;
+
+const LightFont = styled.span`
+  font-weight: 200;
+`;
+
+const FlexContainer = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const CartIcon = styled(RiShoppingCartLine)`
+  font-size: 3.5rem;
+  background-color: #eeeeee;
+  box-shadow: 1px 1px 5px #0000004b;
+  border-radius: 20px;
+  padding: 10px;
+`
 
 const Header = () => {
   return (
-    <Wrapper>
-      <CompanyName>Restaurant Warehouse Supply</CompanyName>
-    </Wrapper>
+    <HeaderDiv as="header">
+      <FlexContainer>
+        <CompanyName>
+          Restaurant <LightFont>Warehouse Supply</LightFont>
+        </CompanyName>
+        <CartIcon />
+      </FlexContainer>
+    </HeaderDiv>
   );
 };
 
