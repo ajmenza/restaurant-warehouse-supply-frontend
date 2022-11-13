@@ -27,7 +27,7 @@ const CompanyName = styled.h1`
   box-shadow: 1px 1px 5px #0000004b;
   cursor: pointer;
   width: 100%;
-  font-size: clamp(1.19rem, 4vw, 2.5rem);
+  font-size: clamp(1.19rem, 4.3vw, 2.5rem);
   text-align: center;
 `;
 
@@ -38,7 +38,8 @@ const LightFont = styled.span`
 const FlexContainer = styled(FlexColumn)`
   align-items: center;
   justify-content: space-between;
-  max-width: 420px;
+  width: 100%;
+  max-width: 500px;
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -61,7 +62,7 @@ const Paragraph = styled.p`
 const InfoContainer = styled(FlexColumn)`
   font-family: "Work Sans";
   margin-top: 10px;
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 2vw, 1.0rem);
   width: 100%;
   /* text-align: start; */
   @media (min-width: 420px) {
@@ -73,14 +74,14 @@ const SearchBar = styled.input`
   background-color: #eeeeee;
   border-radius: 20px 0 0 20px;
   border: none;
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   box-shadow: 1px 1px 5px #0000004b;
   padding-left: 10px;
   width: 100%;
 `;
 
 const SearchButton = styled.button`
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 3vw, 1.25rem);
   width: 100%;
   border-radius: 0 10px 10px 0;
   border: none;

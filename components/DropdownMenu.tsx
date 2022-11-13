@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Flex, FlexColumn } from "../globalStyles";
 import { AiOutlineDown } from "react-icons/ai";
@@ -7,6 +7,7 @@ const Menu = styled.nav`
   background-color: #ffc400;
   padding: 5px;
   position: relative;
+  /* max-width: 420px; */
 `;
 
 const DropdownButton = styled(Flex)`
@@ -16,6 +17,10 @@ const DropdownButton = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   background-color: transparent;
+  padding: 8px 0;
+  cursor: pointer;
+  @media (min-width: 500px) {
+  }
 `;
 
 const ButtonLabel = styled.h2`
@@ -28,29 +33,46 @@ const DropdownArrow = styled(AiOutlineDown)`
   font-size: 1.25rem;
 `;
 
-const Categories = styled(FlexColumn)`
-  padding-left: 10px;
+interface CategoriesProps {
+  toggled: boolean;
+}
+
+const Categories = styled(FlexColumn)<CategoriesProps>`
   list-style: none;
   font-family: "Work Sans";
   position: absolute;
   top: 100%;
+  top: ${(props) => (props.toggled ? "100%" : "-400%")};
   left: 0;
   background-color: #ffc400;
   width: 100%;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
 `;
 
 const Category = styled.li`
-  padding: 5px 0;
+  padding: 10px 0px 10px 10px;
   border-top: 1px solid #3c3c3c43;
+  :hover {
+    background-color: #00bbff;
+  }
 `;
 
 const DropdownMenu = () => {
+  const [toggled, setToggled] = useState(false);
+
+  const handleClick = () => {
+    setToggled(!toggled);
+  };
+
   return (
     <Menu>
-      <DropdownButton as="button">
+      <DropdownButton as="button" onClick={handleClick}>
         <ButtonLabel>Product Categories</ButtonLabel> <DropdownArrow />
       </DropdownButton>
-      <Categories>
+      <Categories as="ul" toggled={toggled}>
         <Category>Category 1</Category>
         <Category>Category 2</Category>
         <Category>Category 3</Category>
