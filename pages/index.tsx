@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
+import DropdownMenu from "../components/DropdownMenu";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
-const Body = styled.body``;
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <DropdownMenu/>
     </>
   );
 }

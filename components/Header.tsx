@@ -5,7 +5,7 @@ import { FlexColumn, Flex } from "../globalStyles";
 
 const HeaderDiv = styled(FlexColumn)`
   height: max-content;
-  font-family: "Work Sans";
+  font-family: "Roboto Slab";
   justify-content: space-between;
 `;
 
@@ -21,15 +21,13 @@ const HeaderContainer = styled(FlexColumn)`
 const CompanyName = styled.h1`
   margin: 0;
   font-weight: 500;
-  letter-spacing: -2px;
-  word-spacing: -5px;
   background-color: #eeeeee;
   border-radius: 15px;
   padding: 3px 15px;
   box-shadow: 1px 1px 5px #0000004b;
   cursor: pointer;
   width: 100%;
-  font-size: clamp(1.47rem, 7vw, 2rem);
+  font-size: clamp(1.19rem, 4vw, 2.5rem);
   text-align: center;
 `;
 
@@ -56,11 +54,12 @@ const CartIcon = styled(RiShoppingCartLine)`
 `;
 
 const Paragraph = styled.p`
-  margin: 0px 0px 0px 15px;
+  margin: 0px 0px 0px 5px;
   font-weight: 500;
 `;
 
 const InfoContainer = styled(FlexColumn)`
+  font-family: "Work Sans";
   margin-top: 10px;
   font-size: 0.8rem;
   width: 100%;
@@ -74,19 +73,23 @@ const SearchBar = styled.input`
   background-color: #eeeeee;
   border-radius: 20px 0 0 20px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   box-shadow: 1px 1px 5px #0000004b;
   padding-left: 10px;
   width: 100%;
 `;
 
 const SearchButton = styled.button`
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   width: 100%;
   border-radius: 0 10px 10px 0;
   border: none;
   box-shadow: 1px 1px 5px #0000004b;
   background-color: #ffc400;
+  cursor: pointer;
+  :hover {
+    box-shadow: 1px 1px 5px #ffffff8e;
+  }
 `;
 
 const SearchContainer = styled(Flex)`
