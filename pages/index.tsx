@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import DropdownMenu from "../components/DropdownMenu";
 import Header from "../components/Header";
+import HomePageMain from "../components/HomePageMain";
 import styles from "../styles/Home.module.css";
 
 
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <Header />
       <DropdownMenu/>
+      <HomePageMain />
     </>
   );
 }

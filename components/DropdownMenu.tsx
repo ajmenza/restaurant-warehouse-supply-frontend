@@ -5,7 +5,7 @@ import { AiOutlineDown } from "react-icons/ai";
 
 const Menu = styled.nav`
   background-color: #ffc400;
-  padding: 5px;
+  /* padding: 5px; */
   position: relative;
   /* max-width: 420px; */
 `;
@@ -17,7 +17,7 @@ const DropdownButton = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   background-color: transparent;
-  padding: 8px 0;
+  padding: 8px 5px;
   cursor: pointer;
   @media (min-width: 500px) {
   }
@@ -40,9 +40,8 @@ interface CategoriesProps {
 const Categories = styled(FlexColumn)<CategoriesProps>`
   list-style: none;
   font-family: "Work Sans";
-  position: absolute;
-  top: 100%;
-  top: ${(props) => (props.toggled ? "100%" : "-400%")};
+  position:${(props) => (props.toggled ? "static" : "absolute")};
+  top: ${(props) => (props.toggled ? "100%" : "-440%")};
   left: 0;
   background-color: #ffc400;
   width: 100%;
@@ -68,6 +67,7 @@ const DropdownMenu = () => {
   };
 
   return (
+    <>
     <Menu>
       <DropdownButton as="button" onClick={handleClick}>
         <ButtonLabel>Product Categories</ButtonLabel> <DropdownArrow />
@@ -80,6 +80,7 @@ const DropdownMenu = () => {
         <Category>Category 5</Category>
       </Categories>
     </Menu>
+    </>
   );
 };
 
