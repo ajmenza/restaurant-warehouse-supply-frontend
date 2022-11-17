@@ -34,14 +34,14 @@ const DropdownArrow = styled(AiOutlineDown)`
 `;
 
 interface CategoriesProps {
-  toggled: boolean;
+  categoriesToggled: boolean;
 }
 
 const Categories = styled(FlexColumn)<CategoriesProps>`
   list-style: none;
   font-family: "Work Sans";
-  position:${(props) => (props.toggled ? "static" : "absolute")};
-  top: ${(props) => (props.toggled ? "100%" : "-440%")};
+  position: ${(props) => (props.categoriesToggled ? "static" : "absolute")};
+  top: ${(props) => (props.categoriesToggled ? "100%" : "-440%")};
   left: 0;
   background-color: #ffc400;
   width: 100%;
@@ -60,26 +60,26 @@ const Category = styled.li`
 `;
 
 const DropdownMenu = () => {
-  const [toggled, setToggled] = useState(false);
+  const [categoriesToggled, setCategoriesToggled] = useState(false);
 
-  const handleClick = () => {
-    setToggled(!toggled);
+  const handleProductCategories = () => {
+    setCategoriesToggled(!categoriesToggled);
   };
 
   return (
     <>
-    <Menu>
-      <DropdownButton as="button" onClick={handleClick}>
-        <ButtonLabel>Product Categories</ButtonLabel> <DropdownArrow />
-      </DropdownButton>
-      <Categories as="ul" toggled={toggled}>
-        <Category>Category 1</Category>
-        <Category>Category 2</Category>
-        <Category>Category 3</Category>
-        <Category>Category 4</Category>
-        <Category>Category 5</Category>
-      </Categories>
-    </Menu>
+      <Menu>
+        <DropdownButton as="button" onClick={handleProductCategories}>
+          <ButtonLabel>Product Categories</ButtonLabel> <DropdownArrow />
+        </DropdownButton>
+        <Categories as="ul" categoriesToggled={categoriesToggled}>
+          <Category>Cooking Equipment</Category>
+          <Category>Commercial Refrigeration</Category>
+          <Category>Furniture</Category>
+          <Category>Kitchen Exhaust & Ventilation</Category>
+          <Category>All Products</Category>
+        </Categories>
+      </Menu>
     </>
   );
 };

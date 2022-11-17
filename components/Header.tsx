@@ -29,6 +29,9 @@ const CompanyName = styled.h1`
   width: 100%;
   font-size: clamp(1.19rem, 4.3vw, 2.5rem);
   text-align: center;
+  :hover {
+    box-shadow: 1px 1px 5px #ffffff8e;
+  }
 `;
 
 const LightFont = styled.span`
