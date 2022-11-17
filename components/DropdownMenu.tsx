@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Flex, FlexColumn } from "../globalStyles";
 import { AiOutlineDown } from "react-icons/ai";
+import Link from "next/link";
+import DropdownLink from "./DropdownLink";
 
 const Menu = styled.nav`
   background-color: #ffc400;
-  /* padding: 5px; */
   position: relative;
-  /* max-width: 420px; */
 `;
 
 const DropdownButton = styled(Flex)`
@@ -73,11 +73,17 @@ const DropdownMenu = () => {
           <ButtonLabel>Product Categories</ButtonLabel> <DropdownArrow />
         </DropdownButton>
         <Categories as="ul" categoriesToggled={categoriesToggled}>
-          <Category>Cooking Equipment</Category>
-          <Category>Commercial Refrigeration</Category>
-          <Category>Furniture</Category>
-          <Category>Kitchen Exhaust & Ventilation</Category>
-          <Category>All Products</Category>
+          <DropdownLink link="cooking-equipment" category="Cooking Equipment" />
+          <DropdownLink
+            link="refrigeration"
+            category="Commercial Refrigeration"
+          />
+          <DropdownLink link="furniture" category="Furniture" />
+          <DropdownLink
+            link="kitchen-exhaust"
+            category="Kitchen Exhaust & Ventilation"
+          />
+          <DropdownLink link="" category="All Products" />
         </Categories>
       </Menu>
     </>

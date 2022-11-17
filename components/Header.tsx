@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FlexColumn, Flex } from "../globalStyles";
+import DropdownMenu from "./DropdownMenu";
+import Link from "next/link";
 
 const HeaderDiv = styled(FlexColumn)`
   height: max-content;
@@ -65,7 +67,7 @@ const Paragraph = styled.p`
 const InfoContainer = styled(FlexColumn)`
   font-family: "Work Sans";
   margin-top: 10px;
-  font-size: clamp(0.8rem, 2vw, 1.0rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
   width: 100%;
   /* text-align: start; */
   @media (min-width: 420px) {
@@ -101,14 +103,20 @@ const SearchContainer = styled(Flex)`
   width: 100%;
 `;
 
+const HomeLink = styled(Link)`
+  width: 100%;
+`
+
 const Header = () => {
   return (
     <HeaderDiv as="header">
       <HeaderContainer>
         <FlexContainer>
-          <CompanyName>
-            Restaurant <LightFont>Warehouse Supply</LightFont>
-          </CompanyName>
+            <HomeLink href="/">
+              <CompanyName>
+                Restaurant <LightFont>Warehouse Supply</LightFont>
+              </CompanyName>
+            </HomeLink>
           <SearchContainer>
             <SearchBar placeholder="Enter a product" type="text" />
             <SearchButton>Search</SearchButton>
@@ -119,6 +127,7 @@ const Header = () => {
           </InfoContainer>
         </FlexContainer>
       </HeaderContainer>
+      <DropdownMenu />
     </HeaderDiv>
   );
 };
